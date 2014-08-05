@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5860396410F2A11278A1C39F /* Counter.m in Sources */ = {isa = PBXBuildFile; fileRef = 58603D7F499435BBEA3C8613 /* Counter.m */; };
 		8478D321198FB43C005049E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8478D320198FB43C005049E9 /* Foundation.framework */; };
 		8478D323198FB43C005049E9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8478D322198FB43C005049E9 /* CoreGraphics.framework */; };
 		8478D325198FB43C005049E9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8478D324198FB43C005049E9 /* UIKit.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5860374FD1D9429A6F1C0F8A /* Counter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Counter.h; sourceTree = "<group>"; };
+		58603D7F499435BBEA3C8613 /* Counter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Counter.m; sourceTree = "<group>"; };
 		8478D31D198FB43C005049E9 /* Optimuses.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Optimuses.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8478D320198FB43C005049E9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8478D322198FB43C005049E9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -119,6 +122,8 @@
 				8478D358198FB5F9005049E9 /* ViewController.xib */,
 				8478D33B198FB43D005049E9 /* Images.xcassets */,
 				8478D327198FB43C005049E9 /* Supporting Files */,
+				58603D7F499435BBEA3C8613 /* Counter.m */,
+				5860374FD1D9429A6F1C0F8A /* Counter.h */,
 			);
 			path = Optimuses;
 			sourceTree = "<group>";
@@ -252,6 +257,7 @@
 				8478D33A198FB43C005049E9 /* ViewController.m in Sources */,
 				8478D331198FB43C005049E9 /* AppDelegate.m in Sources */,
 				8478D32D198FB43C005049E9 /* main.m in Sources */,
+				5860396410F2A11278A1C39F /* Counter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
