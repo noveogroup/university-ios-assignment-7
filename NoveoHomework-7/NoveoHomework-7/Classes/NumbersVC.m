@@ -1,14 +1,14 @@
-//
-//  NumbersVC.m
-//  NoveoHomework-7
-//
-//  Created by Wadim on 8/6/14.
-//  Copyright (c) 2014 Smirnov Electronics. All rights reserved.
-//
 
 #import "NumbersVC.h"
 
+static NSString *const cellIdentifier = @"Cell";
+
 @interface NumbersVC ()
+
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray /*Of NSNumbers*/ *mutableValues;
+
+- (void) addValue:(NSNumber *)value;
 
 @end
 
@@ -18,7 +18,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        _mutableValues = [[NSMutableArray alloc]init];
     }
     return self;
 }
@@ -26,13 +26,64 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.title = @"Fibonacci";
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        // TODO: Calculate new values
+        unsigned long long temp_value = 0;
+        unsigned long long old_temp_value = 0;
+        unsigned long long new_temp_value = 0;
+        for (int i = 0; i<50; i++) {
+            if (temp_value == 0) {
+                temp_value = 1;
+            }
+            else if ((temp_value == 1)&&(new_temp_value == 0)) {
+                temp_value = 1;
+                old_temp_value = 0;
+                new_temp_value = 1;
+            }
+            else {
+                new_temp_value = temp_value + old_temp_value;
+                temp_value = new_temp_value;
+                old_temp_value = temp_value - old_temp_value;
+            }
+            sleep(1);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self addValue:[NSNumber numberWithLongLong:new_temp_value]];
+            });
+        }
+    });
 }
 
-- (void)didReceiveMemoryWarning
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    return [self.mutableValues count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+            reuseIdentifier:cellIdentifier];
+    }
+    NSString *stringValue = [NSString stringWithFormat:@"%@",self.mutableValues[indexPath.row]];
+    cell.textLabel.text = stringValue;
+    cell.textLabel.textAlignment = NSTextAlignmentCenter;
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void) addValue:(NSNumber *)value
+{
+    [self.mutableValues addObject:value];
+    [self.tableView reloadData];
 }
 
 @end

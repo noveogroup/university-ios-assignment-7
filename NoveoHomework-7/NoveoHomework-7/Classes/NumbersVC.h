@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NumbersVC : UIViewController
+@interface NumbersVC : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end
