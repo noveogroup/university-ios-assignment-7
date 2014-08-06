@@ -4,8 +4,7 @@
 static CGPoint const ballOrigin = {100, 100};
 static CGSize const ballSize = {20, 20};
 
-static CGPoint const topBotOrigin = {20,40};
-static CGPoint const bottomBotOrigin = {100, 390};
+static CGPoint const botOrigin = {20,40};
 static CGSize const botSize = {120, 20};
 
 static NSInteger const verticalTopAsset = 60;
@@ -116,7 +115,7 @@ typedef enum {
         usleep(usecSleepTime);
         [self calculateFrame];
         dispatch_async(dispatch_get_main_queue(), ^{
-        [self.delegate engine:self didCalculateNewData:[self.currentData copy]];
+        [self.delegate engine:self didCalculateNewData:self.currentData];
         });
     }
 }
@@ -128,11 +127,12 @@ typedef enum {
         ballSize
     }]];
     [self.currentData setTopBotLayout:[NSValue valueWithCGRect:(CGRect){
-        topBotOrigin,
+        botOrigin,
         botSize
     }]];
     [self.currentData setBottomBotLayout:[NSValue valueWithCGRect:(CGRect){
-        bottomBotOrigin,
+        botOrigin.x,
+        self.gameAreaSize.height - botOrigin.y + botSize.height,
         botSize
     }]];
 }
