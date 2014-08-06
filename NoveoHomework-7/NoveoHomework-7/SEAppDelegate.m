@@ -1,12 +1,14 @@
 
 #import "SEAppDelegate.h"
 #import "NumbersVC.h"
+#import "PongVC.h"
 
 
 @interface SEAppDelegate ()
 
 @property (nonatomic, strong) UITabBarController *rootVC;
 @property (nonatomic, strong) NumbersVC *numbersVC;
+@property (nonatomic, strong) PongVC *pongVC;
 
 @end
 
@@ -22,7 +24,9 @@
     self.rootVC = [[UITabBarController alloc]init];
     self.numbersVC = [[NumbersVC alloc]init];
     self.numbersVC.view.backgroundColor = [UIColor lightGrayColor];
-    [self.rootVC setViewControllers:@[self.numbersVC]];
+    self.pongVC = [[PongVC alloc]init];
+    self.pongVC.view.backgroundColor = [UIColor darkGrayColor];
+    [self.rootVC setViewControllers:@[self.numbersVC, self.pongVC]];
     [self.window setRootViewController:self.rootVC];
     
     return YES;

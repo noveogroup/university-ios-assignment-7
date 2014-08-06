@@ -19,6 +19,8 @@ static NSString *const cellIdentifier = @"Cell";
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         _mutableValues = [[NSMutableArray alloc]init];
+        self.title = @"Fibonacci";
+        self.tabBarItem.image = [UIImage imageNamed:@"fibonacci"];
     }
     return self;
 }
@@ -26,7 +28,6 @@ static NSString *const cellIdentifier = @"Cell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Fibonacci";
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         // TODO: Calculate new values
         unsigned long long temp_value = 0;
