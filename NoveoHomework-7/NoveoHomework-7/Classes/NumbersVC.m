@@ -3,6 +3,8 @@
 
 static NSString *const cellIdentifier = @"Cell";
 
+#pragma mark - NumbersVC Extension
+
 @interface NumbersVC ()
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
@@ -11,6 +13,9 @@ static NSString *const cellIdentifier = @"Cell";
 - (void) addValue:(NSNumber *)value;
 
 @end
+
+
+#pragma mark - NumbersVC Implementation
 
 @implementation NumbersVC
 
@@ -28,8 +33,8 @@ static NSString *const cellIdentifier = @"Cell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    __weak typeof(self) blockSelf = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        // TODO: Calculate new values
         unsigned long long temp_value = 0;
         unsigned long long old_temp_value = 0;
         unsigned long long new_temp_value = 0;
@@ -49,11 +54,22 @@ static NSString *const cellIdentifier = @"Cell";
             }
             sleep(1);
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self addValue:[NSNumber numberWithLongLong:new_temp_value]];
+                [blockSelf addValue:[NSNumber numberWithLongLong:new_temp_value]];
             });
         }
     });
 }
+
+#pragma mark - Private Methods
+
+- (void) addValue:(NSNumber *)value
+{
+    [self.mutableValues addObject:value];
+    [self.tableView reloadData];
+}
+
+
+#pragma mark - TableViewDataSource Protocol Methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -76,15 +92,13 @@ static NSString *const cellIdentifier = @"Cell";
     return cell;
 }
 
+
+#pragma mark - TableViewDelegate Protocol Methods
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-- (void) addValue:(NSNumber *)value
-{
-    [self.mutableValues addObject:value];
-    [self.tableView reloadData];
-}
 
 @end

@@ -106,16 +106,17 @@ typedef enum {
 
 - (void) main
 {
+    __weak typeof(self) blockSelf = self;
     [self calculateStartData];
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self.delegate engine:self didCalculateNewData:[self.currentData copy]];
+        [blockSelf.delegate engine:blockSelf didCalculateNewData:[blockSelf.currentData copy]];
     });
     float usecSleepTime = (1/(float)self.frameRate)*1000000;
     while (YES) {
         usleep(usecSleepTime);
-        [self calculateFrame];
+        [blockSelf calculateFrame];
         dispatch_async(dispatch_get_main_queue(), ^{
-        [self.delegate engine:self didCalculateNewData:self.currentData];
+        [blockSelf.delegate engine:blockSelf didCalculateNewData:blockSelf.currentData];
         });
     }
 }

@@ -19,6 +19,9 @@ static NSInteger const screenWidth = 320;
 static NSInteger const tapBarHeight = 49;
 static NSInteger const statusBarHeight = 20;
 
+
+#pragma mark - PongVC Extension
+
 @interface PongVC ()
 
 @property (nonatomic, strong) UIView *topBot;
@@ -26,6 +29,9 @@ static NSInteger const statusBarHeight = 20;
 @property (nonatomic, strong) UIView *ball;
 
 @end
+
+
+#pragma mark - PongVC Implementation
 
 @implementation PongVC
 
@@ -70,6 +76,9 @@ static NSInteger const statusBarHeight = 20;
     self.bottomBot.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:self.bottomBot];
 }
+
+
+#pragma mark - PongEngineDelegate Protocol Methods
 
 - (void)engine:(PongEngine *)engine didCalculateNewData:(PongData *)data
 {
