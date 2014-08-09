@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5EE78F49-D560-4AD5-A612-DEB609CEDE08</string>
+	<key>IDESourceControlProjectName</key>
+	<string>lab7</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1348B4F9-891B-4EFF-92E5-33DFDE46E52D</key>
+		<string>https://github.com/alaershov/university-ios-assignment-7.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>lab7/lab7.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1348B4F9-891B-4EFF-92E5-33DFDE46E52D</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/alaershov/university-ios-assignment-7.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1348B4F9-891B-4EFF-92E5-33DFDE46E52D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1348B4F9-891B-4EFF-92E5-33DFDE46E52D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>university-ios-assignment-7</string>
+		</dict>
+	</array>
+</dict>
+</plist>
