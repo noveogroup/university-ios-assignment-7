@@ -19,6 +19,9 @@
 		84381E6419962030004EB0DC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84381E4C19962030004EB0DC /* UIKit.framework */; };
 		84381E6C19962030004EB0DC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84381E6A19962030004EB0DC /* InfoPlist.strings */; };
 		84381E6E19962030004EB0DC /* lab7Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84381E6D19962030004EB0DC /* lab7Tests.m */; };
+		84381E7A1996293D004EB0DC /* SequenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84381E781996293D004EB0DC /* SequenceViewController.m */; };
+		84381E7B1996293D004EB0DC /* SequenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84381E791996293D004EB0DC /* SequenceViewController.xib */; };
+		84381E7E19988CCD004EB0DC /* SequenceGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 84381E7D19988CCD004EB0DC /* SequenceGenerator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,11 @@
 		84381E6919962030004EB0DC /* lab7Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "lab7Tests-Info.plist"; sourceTree = "<group>"; };
 		84381E6B19962030004EB0DC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		84381E6D19962030004EB0DC /* lab7Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = lab7Tests.m; sourceTree = "<group>"; };
+		84381E771996293D004EB0DC /* SequenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SequenceViewController.h; sourceTree = "<group>"; };
+		84381E781996293D004EB0DC /* SequenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SequenceViewController.m; sourceTree = "<group>"; };
+		84381E791996293D004EB0DC /* SequenceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SequenceViewController.xib; sourceTree = "<group>"; };
+		84381E7C19988CCD004EB0DC /* SequenceGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SequenceGenerator.h; sourceTree = "<group>"; };
+		84381E7D19988CCD004EB0DC /* SequenceGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SequenceGenerator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +119,11 @@
 				84381E5819962030004EB0DC /* AppDelegate.m */,
 				84381E5A19962030004EB0DC /* Images.xcassets */,
 				84381E4F19962030004EB0DC /* Supporting Files */,
+				84381E771996293D004EB0DC /* SequenceViewController.h */,
+				84381E781996293D004EB0DC /* SequenceViewController.m */,
+				84381E791996293D004EB0DC /* SequenceViewController.xib */,
+				84381E7C19988CCD004EB0DC /* SequenceGenerator.h */,
+				84381E7D19988CCD004EB0DC /* SequenceGenerator.m */,
 			);
 			path = lab7;
 			sourceTree = "<group>";
@@ -219,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84381E7B1996293D004EB0DC /* SequenceViewController.xib in Resources */,
 				84381E5319962030004EB0DC /* InfoPlist.strings in Resources */,
 				84381E5B19962030004EB0DC /* Images.xcassets in Resources */,
 			);
@@ -240,6 +254,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				84381E5919962030004EB0DC /* AppDelegate.m in Sources */,
+				84381E7A1996293D004EB0DC /* SequenceViewController.m in Sources */,
+				84381E7E19988CCD004EB0DC /* SequenceGenerator.m in Sources */,
 				84381E5519962030004EB0DC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
