@@ -30,24 +30,25 @@
 
 -(void)main
 {
+    __weak typeof(self) wself = self;
     while (YES) {
         usleep(10000);
-        @synchronized(self.pongBoard){
-            self.pongBoard.ball.centre = (CGPoint){self.pongBoard.ball.centre.x+self.pongBoard.ball.horizontalSpeed,
-                self.pongBoard.ball.centre.y+self.pongBoard.ball.verticalSpeed};
-            for(NSString *key in self.pongBoard.rackets){
-                Racket* racket = [self.pongBoard.rackets objectForKey:key];
+        @synchronized(wself.pongBoard){
+            wself.pongBoard.ball.centre = (CGPoint){wself.pongBoard.ball.centre.x+wself.pongBoard.ball.horizontalSpeed,
+                wself.pongBoard.ball.centre.y+wself.pongBoard.ball.verticalSpeed};
+            for(NSString *key in wself.pongBoard.rackets){
+                Racket* racket = [wself.pongBoard.rackets objectForKey:key];
                 racket.centre = (CGPoint){racket.centre.x+racket.speed,
                     racket.centre.y};
             }
             
-            if (self.pongBoard.ball.centre.x <= self.pongBoard.ball.size.width/2 ||
-                self.pongBoard.size.width - self.pongBoard.ball.centre.x <= self.pongBoard.ball.size.width/2) {
-                self.pongBoard.ball.horizontalSpeed *= -1;
+            if (wself.pongBoard.ball.centre.x <= wself.pongBoard.ball.size.width/2 ||
+                wself.pongBoard.size.width - wself.pongBoard.ball.centre.x <= wself.pongBoard.ball.size.width/2) {
+                wself.pongBoard.ball.horizontalSpeed *= -1;
             }
-            if (self.pongBoard.ball.centre.y <= self.pongBoard.ball.size.height/2 ||
-                self.pongBoard.size.height - self.pongBoard.ball.centre.y <= self.pongBoard.ball.size.height/2) {
-                self.pongBoard.ball.verticalSpeed *= -1;
+            if (wself.pongBoard.ball.centre.y <= wself.pongBoard.ball.size.height/2 ||
+                wself.pongBoard.size.height - wself.pongBoard.ball.centre.y <= wself.pongBoard.ball.size.height/2) {
+                wself.pongBoard.ball.verticalSpeed *= -1;
             }
 
         }

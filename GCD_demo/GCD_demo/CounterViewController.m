@@ -41,6 +41,7 @@
 }
 
 - (IBAction)startCount:(id)sender {
+    __weak typeof(self) wself = self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSInteger first = 0;
         NSInteger second = 1;
@@ -51,7 +52,7 @@
             first = second;
             second = third;
             dispatch_sync(dispatch_get_main_queue(), ^{
-                self.label.text = [NSString stringWithFormat:@"%d",third];
+                wself.label.text = [NSString stringWithFormat:@"%d",third];
             });
         }
     });

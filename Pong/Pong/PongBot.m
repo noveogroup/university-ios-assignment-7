@@ -31,11 +31,12 @@
 
 -(void)main
 {
+    __weak typeof(self) wself = self;
     Racket* racket = [self.pongBoard.rackets objectForKey:self.racketIdentifier];
     while (YES) {
         usleep(200000);
-        @synchronized(self.pongBoard){
-            if(racket.centre.x < self.pongBoard.ball.centre.x){
+        @synchronized(wself.pongBoard){
+            if(racket.centre.x < wself.pongBoard.ball.centre.x){
                 racket.speed = ABS(racket.speed);
             } else {
                 racket.speed = -ABS(racket.speed);
