@@ -10,6 +10,10 @@
 
 @interface VC ()
 
+@property (atomic) NSInteger number;
+
+@property (nonatomic, weak) IBOutlet UILabel *numberLabel;
+
 @end
 
 @implementation VC
@@ -18,6 +22,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        self.number = 0;
         // Custom initialization
     }
     return self;
@@ -26,29 +31,37 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [super viewDidLoad];
     
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0ul);
-    dispatch_async(queue, ^{
-        NSInteger num = [self fib:1];
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            // Update UI
-            // Example:
-            // self.myLabel.text = result;
-        });
-    });
-    // Do any additional setup after loading the view from its nib.
+    NSThread *numbersThread = [[NSThread alloc] initWithTarget:self
+                            selector:@selector(go) object:nil];
+    
+    [numbersThread start];
 }
+
+- (void)go
+{
+    while (YES) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.numberLabel.text = [NSString stringWithFormat:@"%d", [self fib : self.number]];
+            self.number++;
+        });
+        
+        usleep(100000);
+    }
+}
+
 
 -(NSInteger)fib:(NSInteger) number
 {
-    if(number == 0 || 1)
+    if(number == 0 || number == 1)
     {
         return number;
     }
     
     else
     {
-        return number + [self fib: number - 1];
+        return [self fib:(number - 2)] + [self fib: (number - 1)];
     }
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "VC.h"
 
 @implementation AppDelegate
 
@@ -16,7 +17,19 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    VC *vc = [[VC alloc] init];
+    vc.navigationItem.title = @"Fibonacci sequence";
+    UINavigationController *mainNC = [[UINavigationController alloc]
+                                     initWithRootViewController:vc];
+    
+    mainNC.navigationBar.translucent = NO;
+    self.window.rootViewController = mainNC;
+    
     return YES;
+
+    
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
