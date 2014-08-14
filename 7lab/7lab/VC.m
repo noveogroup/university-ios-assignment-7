@@ -23,14 +23,12 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.number = 0;
-        // Custom initialization
     }
     return self;
 }
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
     [super viewDidLoad];
     
     NSThread *numbersThread = [[NSThread alloc] initWithTarget:self
