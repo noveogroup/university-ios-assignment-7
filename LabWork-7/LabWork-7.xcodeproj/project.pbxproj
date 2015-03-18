@@ -14,6 +14,7 @@
 		B5046D761AB9417F006D5183 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5046D751AB9417F006D5183 /* Images.xcassets */; };
 		B5046D791AB9417F006D5183 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5046D771AB9417F006D5183 /* LaunchScreen.xib */; };
 		B5046D851AB9417F006D5183 /* LabWork_7Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = B5046D841AB9417F006D5183 /* LabWork_7Tests.m */; };
+		B5046D901AB9436E006D5183 /* TriangularNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = B5046D8F1AB9436E006D5183 /* TriangularNumber.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		B5046D7E1AB9417F006D5183 /* LabWork-7Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LabWork-7Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5046D831AB9417F006D5183 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5046D841AB9417F006D5183 /* LabWork_7Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LabWork_7Tests.m; sourceTree = "<group>"; };
+		B5046D8E1AB9436E006D5183 /* TriangularNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TriangularNumber.h; sourceTree = "<group>"; };
+		B5046D8F1AB9436E006D5183 /* TriangularNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TriangularNumber.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 				B5046D6D1AB9417F006D5183 /* AppDelegate.m */,
 				B5046D6F1AB9417F006D5183 /* ViewController.h */,
 				B5046D701AB9417F006D5183 /* ViewController.m */,
+				B5046D8E1AB9436E006D5183 /* TriangularNumber.h */,
+				B5046D8F1AB9436E006D5183 /* TriangularNumber.m */,
 				B5046D721AB9417F006D5183 /* Main.storyboard */,
 				B5046D751AB9417F006D5183 /* Images.xcassets */,
 				B5046D771AB9417F006D5183 /* LaunchScreen.xib */,
@@ -221,6 +226,7 @@
 			files = (
 				B5046D711AB9417F006D5183 /* ViewController.m in Sources */,
 				B5046D6E1AB9417F006D5183 /* AppDelegate.m in Sources */,
+				B5046D901AB9436E006D5183 /* TriangularNumber.m in Sources */,
 				B5046D6B1AB9417F006D5183 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
