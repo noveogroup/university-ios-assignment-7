@@ -10,9 +10,12 @@
 
 @implementation UIColor (PingPong)
 
-+ (UIColor *)pongFieldColor
++ (UIColor *)fieldColor
 {
-    return [UIColor colorWithRed:51.0f green:102.0f blue:51.0f alpha:1.0f];
+    return [UIColor colorWithRed:51.0f/255.0f
+                           green:102.0f/255.0f
+                            blue:51.0f/255.0f
+                           alpha:1.0f];
 }
 
 + (UIColor *)ballColor
@@ -22,7 +25,10 @@
 
 + (UIColor *)paddleColor
 {
-    return [UIColor colorWithRed:51.0f green:153.0f blue:255.0f alpha:1.0f];
+    return [UIColor colorWithRed:51.0f/255.0f
+                           green:153.0f/255.0f
+                            blue:255.0f/255.0f
+                           alpha:1.0f];
 }
 
 @end

@@ -10,7 +10,7 @@
 
 @interface UIColor (PingPong)
 
-+ (UIColor *)pongFieldColor;
++ (UIColor *)fieldColor;
 + (UIColor *)ballColor;
 + (UIColor *)paddleColor;
 
