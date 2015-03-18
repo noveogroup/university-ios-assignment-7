@@ -2,15 +2,17 @@
 #import "PrimeNumberService.h"
 
 @interface PrimeNumberService()
-@property (atomic, strong) NSMutableArray *primeNumberArray;
+@property (nonatomic, strong) NSMutableArray *primeNumberArray;
 @end
 
 @implementation PrimeNumberService
 
+@synthesize primeNumberArray = primeNumberArray_;
+
 -(id) init{
     self = [super init];
     if (self)
-        self.primeNumberArray = [NSMutableArray array];
+        primeNumberArray_ = [NSMutableArray array];
     
     return self;
 }
@@ -19,9 +21,12 @@
     
     for (NSInteger i = 2 ; i < 100 ; i++){
         
-        if ([self isPrimeNumber:i])
-            [self.primeNumberArray addObject:[NSString stringWithFormat:@"%d",i]];
-        
+        if ([self isPrimeNumber:i]){
+            dispatch_barrier_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                [self.primeNumberArray addObject:[NSString stringWithFormat:@"%d",i]];
+            });
+        }
+
         sleep(1);
     }
 }
@@ -36,7 +41,7 @@
 }
 
 -(NSArray*) primeNumbers{
-    return [NSArray arrayWithArray:self.primeNumberArray];
+    return [self.primeNumbers copy];
 }
 
 @end
