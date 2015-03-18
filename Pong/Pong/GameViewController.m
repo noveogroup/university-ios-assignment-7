@@ -46,10 +46,11 @@
     [self.view addSubview:_topPaddle];
     [self.view addSubview:_bottomPaddle];
     
+    // Create game manager and start it.
     GameManagement *game = [[GameManagement alloc] initWithBoard:_board];
-    
     [game start];
     
+    // Create timer and set to it update method.
     NSTimer *timer = [NSTimer timerWithTimeInterval:1.0f/60.0f
                                              target:self
                                            selector:@selector(updateBoard)
@@ -61,11 +62,30 @@
 
 - (void)updateBoard
 {
+    // Change ball position.
     self.ball.frame = (CGRect){
         self.board.ball.center.x - self.board.ball.size.width/2,
         self.board.ball.center.y - self.board.ball.size.height/2,
         self.board.ball.size.width,
         self.board.ball.size.height
+    };
+    
+    // Change top paddle position.
+    self.topPaddle.frame = (CGRect){
+        self.board.topPaddle.center.x - [Paddle defaultSize].width/2,
+        self.board.topPaddle.center.y - [Paddle defaultSize].height/2,
+        [Paddle defaultSize].width,
+        [Paddle defaultSize].height
+        
+    };
+    
+    // Change bottom position.
+    self.bottomPaddle.frame = (CGRect){
+        self.board.bottomPaddle.center.x - [Paddle defaultSize].width/2,
+        self.board.bottomPaddle.center.y - [Paddle defaultSize].height/2,
+        [Paddle defaultSize].width,
+        [Paddle defaultSize].height
+        
     };
 }
 

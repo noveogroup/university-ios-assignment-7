@@ -34,19 +34,32 @@
     {
         @synchronized(weakSelf.board)
         {
+            // Ball moving.
             weakSelf.board.ball.center = (CGPoint){
                 weakSelf.board.ball.center.x + weakSelf.board.ball.xSpeed,
                 weakSelf.board.ball.center.y + weakSelf.board.ball.ySpeed
             };
+            
+            // Top paddle moving.
+            weakSelf.board.topPaddle.center = (CGPoint){
+                weakSelf.board.ball.center.x,
+                weakSelf.board.topPaddle.center.y
+            };
 
-            // Why don't work?
+            // Bottom paddle moving.
+            weakSelf.board.bottomPaddle.center = (CGPoint){
+                weakSelf.board.ball.center.x,
+                weakSelf.board.bottomPaddle.center.y
+            };
+
+            // If ball bounced to left/right side.
             if (weakSelf.board.ball.center.x <= weakSelf.board.ball.size.width/2 ||
                 weakSelf.board.size.width - weakSelf.board.ball.center.x <= weakSelf.board.ball.size.width/2)
             {
                 weakSelf.board.ball.xSpeed *= -1;
             }
             
-            // Why don't work?
+            // If ball bounced to top/bottom side.
             if (weakSelf.board.ball.center.y <= weakSelf.board.ball.size.height/2 ||
                 weakSelf.board.size.height - weakSelf.board.ball.center.y <= weakSelf.board.ball.size.height/2)
             {

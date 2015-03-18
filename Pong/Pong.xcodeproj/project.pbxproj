@@ -13,16 +13,19 @@
 		A0BBBE2C1AB8739F00D27C5B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0BBBE2A1AB8739F00D27C5B /* InfoPlist.strings */; };
 		A0BBBE2E1AB8739F00D27C5B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BBBE2D1AB8739F00D27C5B /* main.m */; };
 		A0BBBE321AB8739F00D27C5B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BBBE311AB8739F00D27C5B /* AppDelegate.m */; };
-		A0BBBE381AB8739F00D27C5B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BBBE371AB8739F00D27C5B /* ViewController.m */; };
 		A0BBBE3A1AB8739F00D27C5B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0BBBE391AB8739F00D27C5B /* Images.xcassets */; };
 		A0BBBE411AB8739F00D27C5B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BBBE401AB8739F00D27C5B /* XCTest.framework */; };
 		A0BBBE421AB8739F00D27C5B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BBBE211AB8739F00D27C5B /* Foundation.framework */; };
 		A0BBBE431AB8739F00D27C5B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BBBE251AB8739F00D27C5B /* UIKit.framework */; };
 		A0BBBE4B1AB8739F00D27C5B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A0BBBE491AB8739F00D27C5B /* InfoPlist.strings */; };
 		A0BBBE4D1AB8739F00D27C5B /* PongTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BBBE4C1AB8739F00D27C5B /* PongTests.m */; };
-		A0BBBE581AB8784900D27C5B /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BBBE571AB8784900D27C5B /* GameViewController.m */; };
-		A0BBBE5A1AB8788300D27C5B /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0BBBE591AB8788300D27C5B /* GameViewController.xib */; };
 		A0BBBE5D1AB87A5C00D27C5B /* UIColor+PingPong.m in Sources */ = {isa = PBXBuildFile; fileRef = A0BBBE5C1AB87A5C00D27C5B /* UIColor+PingPong.m */; };
+		A0C2E3911AB9AF4600CA2D2E /* GameManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C2E3901AB9AF4600CA2D2E /* GameManagement.m */; };
+		A0C2E3941AB9B03C00CA2D2E /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C2E3931AB9B03C00CA2D2E /* Board.m */; };
+		A0C2E3971AB9B04F00CA2D2E /* Paddle.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C2E3961AB9B04F00CA2D2E /* Paddle.m */; };
+		A0C2E39A1AB9B06100CA2D2E /* Ball.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C2E3991AB9B06100CA2D2E /* Ball.m */; };
+		A0C2E3A41AB9CD9900CA2D2E /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0C2E3A21AB9CD9900CA2D2E /* GameViewController.m */; };
+		A0C2E3A51AB9CD9900CA2D2E /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0C2E3A31AB9CD9900CA2D2E /* GameViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,19 +49,25 @@
 		A0BBBE2F1AB8739F00D27C5B /* Pong-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pong-Prefix.pch"; sourceTree = "<group>"; };
 		A0BBBE301AB8739F00D27C5B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A0BBBE311AB8739F00D27C5B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A0BBBE361AB8739F00D27C5B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A0BBBE371AB8739F00D27C5B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A0BBBE391AB8739F00D27C5B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A0BBBE3F1AB8739F00D27C5B /* PongTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PongTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0BBBE401AB8739F00D27C5B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		A0BBBE481AB8739F00D27C5B /* PongTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PongTests-Info.plist"; sourceTree = "<group>"; };
 		A0BBBE4A1AB8739F00D27C5B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A0BBBE4C1AB8739F00D27C5B /* PongTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PongTests.m; sourceTree = "<group>"; };
-		A0BBBE561AB8784900D27C5B /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
-		A0BBBE571AB8784900D27C5B /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
-		A0BBBE591AB8788300D27C5B /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
 		A0BBBE5B1AB87A5C00D27C5B /* UIColor+PingPong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+PingPong.h"; sourceTree = "<group>"; };
 		A0BBBE5C1AB87A5C00D27C5B /* UIColor+PingPong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+PingPong.m"; sourceTree = "<group>"; };
+		A0C2E38F1AB9AF4600CA2D2E /* GameManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManagement.h; sourceTree = "<group>"; };
+		A0C2E3901AB9AF4600CA2D2E /* GameManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameManagement.m; sourceTree = "<group>"; };
+		A0C2E3921AB9B03C00CA2D2E /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
+		A0C2E3931AB9B03C00CA2D2E /* Board.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Board.m; sourceTree = "<group>"; };
+		A0C2E3951AB9B04F00CA2D2E /* Paddle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Paddle.h; sourceTree = "<group>"; };
+		A0C2E3961AB9B04F00CA2D2E /* Paddle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Paddle.m; sourceTree = "<group>"; };
+		A0C2E3981AB9B06100CA2D2E /* Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ball.h; sourceTree = "<group>"; };
+		A0C2E3991AB9B06100CA2D2E /* Ball.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ball.m; sourceTree = "<group>"; };
+		A0C2E3A11AB9CD9900CA2D2E /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		A0C2E3A21AB9CD9900CA2D2E /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		A0C2E3A31AB9CD9900CA2D2E /* GameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,15 +129,16 @@
 			children = (
 				A0BBBE301AB8739F00D27C5B /* AppDelegate.h */,
 				A0BBBE311AB8739F00D27C5B /* AppDelegate.m */,
-				A0BBBE361AB8739F00D27C5B /* ViewController.h */,
-				A0BBBE371AB8739F00D27C5B /* ViewController.m */,
 				A0BBBE391AB8739F00D27C5B /* Images.xcassets */,
 				A0BBBE281AB8739F00D27C5B /* Supporting Files */,
-				A0BBBE561AB8784900D27C5B /* GameViewController.h */,
-				A0BBBE571AB8784900D27C5B /* GameViewController.m */,
-				A0BBBE591AB8788300D27C5B /* GameViewController.xib */,
 				A0BBBE5B1AB87A5C00D27C5B /* UIColor+PingPong.h */,
 				A0BBBE5C1AB87A5C00D27C5B /* UIColor+PingPong.m */,
+				A0C2E38F1AB9AF4600CA2D2E /* GameManagement.h */,
+				A0C2E3901AB9AF4600CA2D2E /* GameManagement.m */,
+				A0C2E39B1AB9B09500CA2D2E /* Game Elements */,
+				A0C2E3A11AB9CD9900CA2D2E /* GameViewController.h */,
+				A0C2E3A21AB9CD9900CA2D2E /* GameViewController.m */,
+				A0C2E3A31AB9CD9900CA2D2E /* GameViewController.xib */,
 			);
 			path = Pong;
 			sourceTree = "<group>";
@@ -160,6 +170,19 @@
 				A0BBBE491AB8739F00D27C5B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A0C2E39B1AB9B09500CA2D2E /* Game Elements */ = {
+			isa = PBXGroup;
+			children = (
+				A0C2E3921AB9B03C00CA2D2E /* Board.h */,
+				A0C2E3931AB9B03C00CA2D2E /* Board.m */,
+				A0C2E3951AB9B04F00CA2D2E /* Paddle.h */,
+				A0C2E3961AB9B04F00CA2D2E /* Paddle.m */,
+				A0C2E3981AB9B06100CA2D2E /* Ball.h */,
+				A0C2E3991AB9B06100CA2D2E /* Ball.m */,
+			);
+			name = "Game Elements";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,9 +261,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0BBBE5A1AB8788300D27C5B /* GameViewController.xib in Resources */,
 				A0BBBE3A1AB8739F00D27C5B /* Images.xcassets in Resources */,
 				A0BBBE2C1AB8739F00D27C5B /* InfoPlist.strings in Resources */,
+				A0C2E3A51AB9CD9900CA2D2E /* GameViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,11 +282,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0BBBE581AB8784900D27C5B /* GameViewController.m in Sources */,
-				A0BBBE381AB8739F00D27C5B /* ViewController.m in Sources */,
+				A0C2E3A41AB9CD9900CA2D2E /* GameViewController.m in Sources */,
+				A0C2E3941AB9B03C00CA2D2E /* Board.m in Sources */,
+				A0C2E3911AB9AF4600CA2D2E /* GameManagement.m in Sources */,
 				A0BBBE5D1AB87A5C00D27C5B /* UIColor+PingPong.m in Sources */,
+				A0C2E3971AB9B04F00CA2D2E /* Paddle.m in Sources */,
 				A0BBBE321AB8739F00D27C5B /* AppDelegate.m in Sources */,
 				A0BBBE2E1AB8739F00D27C5B /* main.m in Sources */,
+				A0C2E39A1AB9B06100CA2D2E /* Ball.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +490,7 @@
 				A0BBBE521AB8739F00D27C5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A0BBBE531AB8739F00D27C5B /* Build configuration list for PBXNativeTarget "PongTests" */ = {
 			isa = XCConfigurationList;
@@ -472,6 +499,7 @@
 				A0BBBE551AB8739F00D27C5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

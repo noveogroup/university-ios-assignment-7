@@ -23,8 +23,8 @@
     {
         _size = size;
         _ball = [[Ball alloc] initWithSize:[Ball defaultSize] center:(CGPoint){_size.width/2, _size.height/2}];
-        _topPaddle = [[Paddle alloc] initWithSize:[Paddle defaultSize] center:(CGPoint){_size.width/2, _size.height-4}];
-        _bottomPaddle = [[Paddle alloc] initWithSize:[Paddle defaultSize] center:(CGPoint){_size.width/2, 4}];
+        _topPaddle = [[Paddle alloc] initWithSize:[Paddle defaultSize] center:(CGPoint){_size.width/2, _size.height}];
+        _bottomPaddle = [[Paddle alloc] initWithSize:[Paddle defaultSize] center:(CGPoint){_size.width/2, 0}];
     }
     
     return self;

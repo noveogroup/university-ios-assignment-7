@@ -35,7 +35,7 @@
 
 + (CGSize)defaultSize
 {
-    return (CGSize){80, 4};
+    return (CGSize){80, 7};
 }
 
 @end

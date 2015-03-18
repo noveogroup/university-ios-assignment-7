@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "UIColor+PingPong.h"
 #import "GameManagement.h"
-#import "AIBot.h"
 
 @interface GameViewController : UIViewController
 
