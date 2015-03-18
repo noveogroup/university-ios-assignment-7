@@ -41,7 +41,7 @@
 }
 
 -(NSArray*) primeNumbers{
-    return [self.primeNumbers copy];
+    return [self.primeNumberArray copy];
 }
 
 @end
