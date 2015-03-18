@@ -57,7 +57,7 @@
 }
 
 -(void) reReadNumbers{
-    self.primeNumberArray = [[self.primeService primeNumbers] copy];
+    self.primeNumberArray = [self.primeService primeNumbers];
     [self.tableView reloadData];
 }
 
