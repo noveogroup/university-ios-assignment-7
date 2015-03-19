@@ -17,6 +17,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.ball = [[UIView alloc]init];
+    self.ball.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:self.ball];
+    // Create a top Bot
+    self.topPlatform = [[UIView alloc]init];
+    self.topPlatform.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:self.topPlatform];
+    // Create a bottom Bot
+    self.bottomPlatform = [[UIView alloc]init];
+    self.bottomPlatform.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:self.bottomPlatform];
+    
+    Game *newGame = [[Game alloc]init];
+    CGSize gameAreaSize = {
+        self.view.bounds.size.width,
+        self.view.bounds.size.height
+    };
+    newGame.gameAreaSize = gameAreaSize;
+    newGame.delegate = self;
+    [newGame startGame];
 
 }
 
