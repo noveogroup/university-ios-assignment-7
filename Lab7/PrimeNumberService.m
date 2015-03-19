@@ -49,9 +49,11 @@
 
 -(NSArray*) primeNumbers{
     
-    __block NSArray *retPrimeArray;
+    NSArray *__block retPrimeArray;
+    __typeof(NSMutableArray) __weak *primeNumberArrayWeak= self.primeNumberArray;
+    
     dispatch_sync(self.concurrentPrimeNumberQueue, ^{
-        retPrimeArray = [self.primeNumberArray copy];
+        retPrimeArray = [primeNumberArrayWeak copy];
     });
     return retPrimeArray;
 }

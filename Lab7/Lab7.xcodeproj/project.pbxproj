@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		843627521AB93B4D004E8723 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 843627501AB93B4D004E8723 /* ViewController.m */; };
 		843627531AB93B4D004E8723 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843627511AB93B4D004E8723 /* ViewController.xib */; };
+		843627561AB93C5C004E8723 /* PrimeNumberService.m in Sources */ = {isa = PBXBuildFile; fileRef = 843627551AB93C5C004E8723 /* PrimeNumberService.m */; };
 		CE2CE07D1AB567D5008E132B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2CE07C1AB567D5008E132B /* main.m */; };
 		CE2CE0801AB567D5008E132B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2CE07F1AB567D5008E132B /* AppDelegate.m */; };
 		CE2CE0971AB567D6008E132B /* Lab7Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2CE0961AB567D6008E132B /* Lab7Tests.m */; };
@@ -28,6 +29,8 @@
 		8436274F1AB93B4D004E8723 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../ViewController.h; sourceTree = "<group>"; };
 		843627501AB93B4D004E8723 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../ViewController.m; sourceTree = "<group>"; };
 		843627511AB93B4D004E8723 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewController.xib; path = ../ViewController.xib; sourceTree = "<group>"; };
+		843627541AB93C5C004E8723 /* PrimeNumberService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrimeNumberService.h; path = ../PrimeNumberService.h; sourceTree = "<group>"; };
+		843627551AB93C5C004E8723 /* PrimeNumberService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PrimeNumberService.m; path = ../PrimeNumberService.m; sourceTree = "<group>"; };
 		CE2CE0771AB567D5008E132B /* Lab7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lab7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2CE07B1AB567D5008E132B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE2CE07C1AB567D5008E132B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -77,6 +80,8 @@
 		CE2CE0791AB567D5008E132B /* Lab7 */ = {
 			isa = PBXGroup;
 			children = (
+				843627541AB93C5C004E8723 /* PrimeNumberService.h */,
+				843627551AB93C5C004E8723 /* PrimeNumberService.m */,
 				8436274F1AB93B4D004E8723 /* ViewController.h */,
 				843627501AB93B4D004E8723 /* ViewController.m */,
 				843627511AB93B4D004E8723 /* ViewController.xib */,
@@ -213,6 +218,7 @@
 			files = (
 				843627521AB93B4D004E8723 /* ViewController.m in Sources */,
 				CE2CE0801AB567D5008E132B /* AppDelegate.m in Sources */,
+				843627561AB93C5C004E8723 /* PrimeNumberService.m in Sources */,
 				CE2CE07D1AB567D5008E132B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
