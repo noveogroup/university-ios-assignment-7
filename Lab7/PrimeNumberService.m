@@ -48,7 +48,12 @@
 }
 
 -(NSArray*) primeNumbers{
-    return [self.primeNumberArray copy];
+    
+    __block NSArray *retPrimeArray;
+    dispatch_sync(self.concurrentPrimeNumberQueue, ^{
+        retPrimeArray = [self.primeNumberArray copy];
+    });
+    return retPrimeArray;
 }
 
 @end
