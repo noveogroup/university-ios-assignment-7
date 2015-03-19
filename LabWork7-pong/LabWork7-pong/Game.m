@@ -28,6 +28,7 @@ typedef NS_ENUM(NSInteger, Direction) {
 - (void)calculateBallPosition;
 - (void)calculatePlatformsPosition;
 
+
 @end
 
 
@@ -163,7 +164,24 @@ typedef NS_ENUM(NSInteger, Direction) {
 }
 
 
-
+- (void)startGame
+{
+    __typeof(self) __weak  wSelf = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [self setStartLayouts];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [wSelf.delegate gameChangeLayoutsWithBall:wSelf.ballLayout topPlatform:wSelf.topPlatformLayout bottomPlatform:wSelf.bottomPlatformLayout];
+        });
+        while (YES) {
+            usleep(5000);
+            [wSelf calculateBallPosition];
+            [wSelf calculatePlatformsPosition];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [wSelf.delegate gameChangeLayoutsWithBall:wSelf.ballLayout topPlatform:wSelf.topPlatformLayout bottomPlatform:wSelf.bottomPlatformLayout];
+            });
+        }
+    });
+}
 
 
 

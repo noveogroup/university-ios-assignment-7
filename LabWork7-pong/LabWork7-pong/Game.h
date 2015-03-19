@@ -23,6 +23,7 @@
 @property (nonatomic) CGSize gameAreaSize;
 @property (nonatomic) id<GameDelegate> delegate;
 
+- (void)startGame;
 
 
 @end

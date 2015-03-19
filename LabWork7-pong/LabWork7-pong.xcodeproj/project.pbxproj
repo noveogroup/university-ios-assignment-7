@@ -418,6 +418,7 @@
 				A8908B2C1AB9FF630041DF11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A8908B2D1AB9FF630041DF11 /* Build configuration list for PBXNativeTarget "LabWork7-pongTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +427,7 @@
 				A8908B2F1AB9FF630041DF11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
