@@ -1,8 +1,9 @@
 
 
 #import <UIKit/UIKit.h>
+#import "Game.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <GameDelegate>
 
 
 @end

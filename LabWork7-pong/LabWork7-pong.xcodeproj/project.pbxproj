@@ -14,6 +14,7 @@
 		A8908B181AB9FF630041DF11 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8908B171AB9FF630041DF11 /* Images.xcassets */; };
 		A8908B1B1AB9FF630041DF11 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8908B191AB9FF630041DF11 /* LaunchScreen.xib */; };
 		A8908B271AB9FF630041DF11 /* LabWork7_pongTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A8908B261AB9FF630041DF11 /* LabWork7_pongTests.m */; };
+		A8908B321ABA041D0041DF11 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = A8908B311ABA041D0041DF11 /* Game.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		A8908B201AB9FF630041DF11 /* LabWork7-pongTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LabWork7-pongTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8908B251AB9FF630041DF11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8908B261AB9FF630041DF11 /* LabWork7_pongTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LabWork7_pongTests.m; sourceTree = "<group>"; };
+		A8908B301ABA041D0041DF11 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		A8908B311ABA041D0041DF11 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 				A8908B111AB9FF630041DF11 /* ViewController.h */,
 				A8908B121AB9FF630041DF11 /* ViewController.m */,
 				A8908B141AB9FF630041DF11 /* Main.storyboard */,
+				A8908B301ABA041D0041DF11 /* Game.h */,
+				A8908B311ABA041D0041DF11 /* Game.m */,
 				A8908B171AB9FF630041DF11 /* Images.xcassets */,
 				A8908B191AB9FF630041DF11 /* LaunchScreen.xib */,
 				A8908B0A1AB9FF630041DF11 /* Supporting Files */,
@@ -222,6 +227,7 @@
 				A8908B131AB9FF630041DF11 /* ViewController.m in Sources */,
 				A8908B101AB9FF630041DF11 /* AppDelegate.m in Sources */,
 				A8908B0D1AB9FF630041DF11 /* main.m in Sources */,
+				A8908B321ABA041D0041DF11 /* Game.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
