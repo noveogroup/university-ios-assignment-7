@@ -5,6 +5,5 @@
 
 @interface ViewController : UIViewController <GameDelegate>
 
-
 @end
 

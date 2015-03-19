@@ -9,7 +9,12 @@
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
 
+#import <UIKit/UIKit.h>
+
 @protocol GameDelegate <NSObject>
+
+
+- (float)gameSpeed;
 
 - (void)gameChangeLayoutsWithBall:(NSValue *) ball topPlatform:(NSValue *) topPlatform bottomPlatform:(NSValue *) bottomPlatform;
 

@@ -9,6 +9,8 @@ static CGSize const ballSize = {20, 20};
 static CGPoint const platformOrigin = {20,40};
 static CGSize const platformSize = {120, 20};
 
+static NSInteger const bottomIndent = 80;
+
 
 typedef NS_ENUM(NSInteger, Direction) {
     directionNE = 0,
@@ -61,7 +63,7 @@ typedef NS_ENUM(NSInteger, Direction) {
     
     CGRect bottomPlatform = (CGRect){
         platformOrigin.x,
-        self.gameAreaSize.height - platformSize.height,
+        self.gameAreaSize.height - platformSize.height - bottomIndent,
         platformSize
     };
     
@@ -83,7 +85,7 @@ typedef NS_ENUM(NSInteger, Direction) {
             newBallLayout.origin.y = newBallLayout.origin.y + 1;
             newBallLayout.origin.x = newBallLayout.origin.x + 1;
             if (newBallLayout.origin.y >= self.gameAreaSize.height - ballSize.height
-                - rectBottomPlatformLayout.size.height)
+                - rectBottomPlatformLayout.size.height - bottomIndent)
             {
                 self.ballDirection = directionNE;
             }
@@ -98,7 +100,7 @@ typedef NS_ENUM(NSInteger, Direction) {
             newBallLayout.origin.y = newBallLayout.origin.y + 1;
             newBallLayout.origin.x = newBallLayout.origin.x - 1;
             if (newBallLayout.origin.y >= self.gameAreaSize.height - ballSize.height
-                - rectBottomPlatformLayout.size.height)
+                - rectBottomPlatformLayout.size.height - bottomIndent)
             {
                 self.ballDirection = directionNW;
             }
@@ -173,7 +175,7 @@ typedef NS_ENUM(NSInteger, Direction) {
             [wSelf.delegate gameChangeLayoutsWithBall:wSelf.ballLayout topPlatform:wSelf.topPlatformLayout bottomPlatform:wSelf.bottomPlatformLayout];
         });
         while (YES) {
-            usleep(5000);
+            usleep([wSelf.delegate gameSpeed]);
             [wSelf calculateBallPosition];
             [wSelf calculatePlatformsPosition];
             dispatch_async(dispatch_get_main_queue(), ^{

@@ -9,6 +9,8 @@
 @property (nonatomic, strong) UIView *bottomPlatform;
 @property (nonatomic, strong) UIView *ball;
 
+@property (atomic) IBOutlet UISlider *speed;
+
 @end
 
 @implementation ViewController
@@ -49,6 +51,11 @@
     [self.topPlatform setFrame:[topPlatform CGRectValue]];
     [self.bottomPlatform setFrame:[bottomPlatform CGRectValue]];
     
+}
+
+- (float)gameSpeed
+{
+    return self.speed.value;
 }
 
 
