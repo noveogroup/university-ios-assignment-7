@@ -20,6 +20,15 @@
 
 }
 
+- (void)gameChangeLayoutsWithBall:(NSValue *) ball topPlatform:(NSValue *) topPlatform bottomPlatform:(NSValue *) bottomPlatform
+{
+    
+    
+    [self.ball setFrame:[ball CGRectValue]];
+    [self.topPlatform setFrame:[topPlatform CGRectValue]];
+    [self.bottomPlatform setFrame:[bottomPlatform CGRectValue]];
+    
+}
 
 
 @end
