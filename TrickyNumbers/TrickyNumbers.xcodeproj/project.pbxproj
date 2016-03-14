@@ -14,6 +14,8 @@
 		840E2C201C94972100FE7E3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840E2C1F1C94972100FE7E3B /* Assets.xcassets */; };
 		840E2C231C94972100FE7E3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840E2C211C94972100FE7E3B /* LaunchScreen.storyboard */; };
 		840E2C2C1C9497CC00FE7E3B /* Number.m in Sources */ = {isa = PBXBuildFile; fileRef = 840E2C2B1C9497CC00FE7E3B /* Number.m */; };
+		840E2C331C95EBE100FE7E3B /* UIColor+RandomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 840E2C321C95EBE100FE7E3B /* UIColor+RandomColor.m */; };
+		840E2C3A1C96436700FE7E3B /* GameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 840E2C391C96436700FE7E3B /* GameVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,10 @@
 		840E2C241C94972100FE7E3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		840E2C2A1C9497CC00FE7E3B /* Number.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Number.h; sourceTree = "<group>"; };
 		840E2C2B1C9497CC00FE7E3B /* Number.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Number.m; sourceTree = "<group>"; };
+		840E2C311C95EBE100FE7E3B /* UIColor+RandomColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+RandomColor.h"; path = "Category/UIColor+RandomColor.h"; sourceTree = "<group>"; };
+		840E2C321C95EBE100FE7E3B /* UIColor+RandomColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+RandomColor.m"; path = "Category/UIColor+RandomColor.m"; sourceTree = "<group>"; };
+		840E2C381C96436700FE7E3B /* GameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameVC.h; path = Game/GameVC.h; sourceTree = "<group>"; };
+		840E2C391C96436700FE7E3B /* GameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameVC.m; path = Game/GameVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +68,11 @@
 			isa = PBXGroup;
 			children = (
 				840E2C161C94972100FE7E3B /* AppDelegate.h */,
+				840E2C341C95EBE600FE7E3B /* Category */,
 				840E2C171C94972100FE7E3B /* AppDelegate.m */,
 				840E2C2A1C9497CC00FE7E3B /* Number.h */,
 				840E2C2B1C9497CC00FE7E3B /* Number.m */,
+				840E2C301C95E94100FE7E3B /* Game */,
 				840E2C191C94972100FE7E3B /* ViewController.h */,
 				840E2C1A1C94972100FE7E3B /* ViewController.m */,
 				840E2C1C1C94972100FE7E3B /* Main.storyboard */,
@@ -82,6 +90,24 @@
 				840E2C141C94972100FE7E3B /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		840E2C301C95E94100FE7E3B /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				840E2C381C96436700FE7E3B /* GameVC.h */,
+				840E2C391C96436700FE7E3B /* GameVC.m */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		840E2C341C95EBE600FE7E3B /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				840E2C311C95EBE100FE7E3B /* UIColor+RandomColor.h */,
+				840E2C321C95EBE100FE7E3B /* UIColor+RandomColor.m */,
+			);
+			name = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,9 +181,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840E2C3A1C96436700FE7E3B /* GameVC.m in Sources */,
 				840E2C2C1C9497CC00FE7E3B /* Number.m in Sources */,
 				840E2C1B1C94972100FE7E3B /* ViewController.m in Sources */,
 				840E2C181C94972100FE7E3B /* AppDelegate.m in Sources */,
+				840E2C331C95EBE100FE7E3B /* UIColor+RandomColor.m in Sources */,
 				840E2C151C94972100FE7E3B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,6 +333,7 @@
 				840E2C291C94972100FE7E3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,5 +1,6 @@
 #import "ViewController.h"
 #import "Number.h"
+#import "UIColor+RandomColor.h"
 
 @interface ViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *label;
@@ -57,6 +58,6 @@
 #pragma mark - Actions
 
 - (IBAction)actionButton:(UIButton *)sender {
-    self.view.backgroundColor = [self randomColor];
+    self.view.backgroundColor = [UIColor randomColor];
 }
 @end
