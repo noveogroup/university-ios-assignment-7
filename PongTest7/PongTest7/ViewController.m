@@ -120,6 +120,21 @@
  }
     
 }
+
+- (void)startGame
+{
+    NSThread *gameLogic = [[NSThread alloc] initWithTarget:self
+                                                  selector:@selector(engineLoop) object:nil];
+    [gameLogic start];
+}
+
+- (void)engineLoop
+{
+    while (YES) {
+        [self BallMovement];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
