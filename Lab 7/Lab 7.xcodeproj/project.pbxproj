@@ -9,24 +9,33 @@
 /* Begin PBXBuildFile section */
 		317782DB1C966E7200427400 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 317782D41C966E7100427400 /* Assets.xcassets */; };
 		317782DC1C966E7200427400 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317782D51C966E7100427400 /* LaunchScreen.storyboard */; };
-		317782DD1C966E7200427400 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317782D71C966E7200427400 /* Main.storyboard */; };
 		317782DE1C966E7200427400 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 317782D91C966E7200427400 /* Info.plist */; };
-		317782DF1C966E7200427400 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 317782DA1C966E7200427400 /* main.m */; };
-		317782E61C966E7600427400 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 317782E31C966E7600427400 /* AppDelegate.m */; };
-		317782E71C966E7600427400 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 317782E51C966E7600427400 /* ViewController.m */; };
+		31F798251C9B09D300E898CC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F7981B1C9B09D300E898CC /* AppDelegate.m */; };
+		31F798261C9B09D300E898CC /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F7981D1C9B09D300E898CC /* GameViewController.m */; };
+		31F798271C9B09D300E898CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F7981E1C9B09D300E898CC /* main.m */; };
+		31F798281C9B09D300E898CC /* PiGregorySequenceCalculations.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F798201C9B09D300E898CC /* PiGregorySequenceCalculations.m */; };
+		31F798291C9B09D300E898CC /* PIWallesFormulaCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F798221C9B09D300E898CC /* PIWallesFormulaCalculator.m */; };
+		31F7982A1C9B09D300E898CC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F798241C9B09D300E898CC /* ViewController.m */; };
+		31F7982C1C9B0A7400E898CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31F7982B1C9B0A7400E898CC /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		317782B91C966D6000427400 /* Lab 7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lab 7.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		317782D41C966E7100427400 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		317782D61C966E7200427400 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		317782D81C966E7200427400 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		317782D91C966E7200427400 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		317782DA1C966E7200427400 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		317782E21C966E7600427400 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		317782E31C966E7600427400 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		317782E41C966E7600427400 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		317782E51C966E7600427400 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		31F7981A1C9B09D300E898CC /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		31F7981B1C9B09D300E898CC /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		31F7981C1C9B09D300E898CC /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		31F7981D1C9B09D300E898CC /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		31F7981E1C9B09D300E898CC /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		31F7981F1C9B09D300E898CC /* PiGregorySequenceCalculations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PiGregorySequenceCalculations.h; sourceTree = "<group>"; };
+		31F798201C9B09D300E898CC /* PiGregorySequenceCalculations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PiGregorySequenceCalculations.m; sourceTree = "<group>"; };
+		31F798211C9B09D300E898CC /* PIWallesFormulaCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIWallesFormulaCalculator.h; sourceTree = "<group>"; };
+		31F798221C9B09D300E898CC /* PIWallesFormulaCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIWallesFormulaCalculator.m; sourceTree = "<group>"; };
+		31F798231C9B09D300E898CC /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		31F798241C9B09D300E898CC /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		31F7982B1C9B0A7400E898CC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,8 +52,8 @@
 		317782B01C966D6000427400 = {
 			isa = PBXGroup;
 			children = (
-				317782E11C966E7600427400 /* Internal */,
-				317782E01C966E7600427400 /* Common */,
+				31F798181C9B09D300E898CC /* Common */,
+				31F798191C9B09D300E898CC /* Internal */,
 				317782D31C966E7100427400 /* Resources */,
 				317782BA1C966D6000427400 /* Products */,
 			);
@@ -64,30 +73,34 @@
 				317782D41C966E7100427400 /* Assets.xcassets */,
 				317782D51C966E7100427400 /* LaunchScreen.storyboard */,
 				317782D91C966E7200427400 /* Info.plist */,
-				317782DA1C966E7200427400 /* main.m */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		317782E01C966E7600427400 /* Common */ = {
+		31F798181C9B09D300E898CC /* Common */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Common;
-			path = Resources/Common;
+			path = Common;
 			sourceTree = "<group>";
 		};
-		317782E11C966E7600427400 /* Internal */ = {
+		31F798191C9B09D300E898CC /* Internal */ = {
 			isa = PBXGroup;
 			children = (
-				317782E21C966E7600427400 /* AppDelegate.h */,
-				317782E31C966E7600427400 /* AppDelegate.m */,
-				317782E41C966E7600427400 /* ViewController.h */,
-				317782E51C966E7600427400 /* ViewController.m */,
-				317782D71C966E7200427400 /* Main.storyboard */,
+				31F7982B1C9B0A7400E898CC /* Main.storyboard */,
+				31F7981A1C9B09D300E898CC /* AppDelegate.h */,
+				31F7981B1C9B09D300E898CC /* AppDelegate.m */,
+				31F798231C9B09D300E898CC /* ViewController.h */,
+				31F798241C9B09D300E898CC /* ViewController.m */,
+				31F7981F1C9B09D300E898CC /* PiGregorySequenceCalculations.h */,
+				31F798201C9B09D300E898CC /* PiGregorySequenceCalculations.m */,
+				31F798211C9B09D300E898CC /* PIWallesFormulaCalculator.h */,
+				31F798221C9B09D300E898CC /* PIWallesFormulaCalculator.m */,
+				31F7981C1C9B09D300E898CC /* GameViewController.h */,
+				31F7981D1C9B09D300E898CC /* GameViewController.m */,
+				31F7981E1C9B09D300E898CC /* main.m */,
 			);
-			name = Internal;
-			path = Resources/Internal;
+			path = Internal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,9 +161,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				317782DE1C966E7200427400 /* Info.plist in Resources */,
-				317782DD1C966E7200427400 /* Main.storyboard in Resources */,
 				317782DB1C966E7200427400 /* Assets.xcassets in Resources */,
 				317782DC1C966E7200427400 /* LaunchScreen.storyboard in Resources */,
+				31F7982C1C9B0A7400E898CC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,9 +174,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				317782E71C966E7600427400 /* ViewController.m in Sources */,
-				317782E61C966E7600427400 /* AppDelegate.m in Sources */,
-				317782DF1C966E7200427400 /* main.m in Sources */,
+				31F7982A1C9B09D300E898CC /* ViewController.m in Sources */,
+				31F798291C9B09D300E898CC /* PIWallesFormulaCalculator.m in Sources */,
+				31F798261C9B09D300E898CC /* GameViewController.m in Sources */,
+				31F798281C9B09D300E898CC /* PiGregorySequenceCalculations.m in Sources */,
+				31F798271C9B09D300E898CC /* main.m in Sources */,
+				31F798251C9B09D300E898CC /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,15 +192,6 @@
 				317782D61C966E7200427400 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		317782D71C966E7200427400 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				317782D81C966E7200427400 /* Base */,
-			);
-			name = Main.storyboard;
-			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
