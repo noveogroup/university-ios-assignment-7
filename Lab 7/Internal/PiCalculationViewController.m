@@ -37,6 +37,14 @@
     [self startVisualization];
 }
 
+- (NSThread *) thread
+{
+    if (!_thread) {
+        _thread = [[NSThread alloc] initWithTarget:self selector:@selector(calculate) object:nil];
+    }
+    return _thread;
+}
+
 #pragma mark - Actions
 
 - (IBAction)pauseAction:(UIButton *)sender
@@ -75,14 +83,14 @@
 {
     [self.piGSCalculator stop];
     [self.piWFCalculator stop];
+    [self.thread cancel];
 }
 
 - (void) startCalculation
 {
     if (self.thread) {
-        [self.thread cancel];
+        _thread = nil;
     }
-    self.thread = [[NSThread alloc] initWithTarget:self selector:@selector(calculate) object:nil];
 
     self.working = YES;
     self.pause = NO;

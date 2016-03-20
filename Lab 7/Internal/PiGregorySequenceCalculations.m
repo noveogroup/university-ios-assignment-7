@@ -20,6 +20,8 @@ static NSInteger const queuesCount = 4;
 @property (atomic) NSInteger n;
 @property (atomic) Float64 pi;
 
+@property (atomic) BOOL readyToRun;
+
 @end
 
 @implementation PiGregorySequenceCalculations
@@ -42,6 +44,7 @@ static NSInteger const queuesCount = 4;
     if (self) {
         _lockN = [NSLock new];
         _lockPi = [NSLock new];
+        _readyToRun = YES;
     }
     return self;
 }
@@ -66,23 +69,47 @@ static NSInteger const queuesCount = 4;
 - (void) stop
 {
     self.working = NO;
+    self.paused = NO;
+    while (!self.readyToRun) {
+        //wait
+    }
 }
 
+
+void myFinalizerFunction(void *context)
+{
+    //NSString* theData = (__bridge NSString*)context;
+    
+    NSLog(@"dealloc");
+    
+    // Освобождение структуры.
+    
+    //free((__bridge void *)(theData));
+    
+}
 
 - (void) runCalculus
 {
     
-    //dispatch_queue_t queues[queuesCount];
-    NSMutableArray *queues = [NSMutableArray array];
+    NSMutableArray *queuesContext = [NSMutableArray alloc];
+    NSMutableArray *queues = [queuesContext init];
+    
     NSMutableArray *queuesIsFree = [NSMutableArray array];
     NSMutableArray *queuesNames = [NSMutableArray array];
     
     for (int i = 0; i < queuesCount; i++) {
-        NSString *queueName = [@(i) stringValue];
+        NSString *queueNameContext = [NSString alloc];
+        NSString *queueName = [queueNameContext initWithFormat:@"%@", @(i)];
         
         [queuesNames addObject:queueName];
-        //queues[i] = dispatch_queue_create(queueName.UTF8String, NULL);
-        [queues addObject:dispatch_queue_create(queueName.UTF8String, NULL)];
+        
+        dispatch_object_t queue = dispatch_queue_create(queueName.UTF8String, NULL);
+        if (queue) {
+            dispatch_set_context(queue, (__bridge void *)(queueNameContext));
+            dispatch_set_finalizer_f(queue, &myFinalizerFunction);
+        }
+        
+        [queues addObject:queue];
         [queuesIsFree addObject:@(YES)];
     }
     
@@ -111,20 +138,24 @@ static NSInteger const queuesCount = 4;
         }
     };
     
+    self.readyToRun = NO;
+    
     NSInteger oldN = self.n + 1;
     while (self.working) {
         if (!self.paused && (oldN != self.n)) {
-            oldN = self.n;
-
             @synchronized (queuesIsFree) {
                 NSUInteger freeQueueIndex = [queuesIsFree indexOfObject:@(YES)];
                 if (freeQueueIndex != NSNotFound) {
+                    oldN = self.n;
                     queuesIsFree[freeQueueIndex] = @(NO);
                     dispatch_async(queues[freeQueueIndex], calculusBlock);
                 }
             }
         }
     }
+    
+    self.readyToRun = YES;
+    NSLog(@"end");
     
 }
 
