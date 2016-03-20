@@ -2,8 +2,8 @@
 
 @interface PIWallesFormulaCalculator : NSObject
 
-@property (atomic, assign) NSInteger n;
-@property (atomic, assign) long double pi;
+@property (nonatomic, assign, readonly) NSInteger n;
+@property (nonatomic, assign, readonly) Float64 pi;
 
 +(PIWallesFormulaCalculator *) sharedCalculator;
 - (instancetype)init;

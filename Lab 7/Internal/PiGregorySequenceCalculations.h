@@ -2,10 +2,8 @@
 
 @interface PiGregorySequenceCalculations : NSObject
 
-@property (atomic, assign) NSInteger n;
-@property (atomic, assign) long double pi;
-
-@property (nonatomic, readonly) BOOL working;
+@property (nonatomic, assign, readonly) NSInteger n;
+@property (nonatomic, assign, readonly) Float64 pi;
 
 +(PiGregorySequenceCalculations *) sharedCalculator;
 - (instancetype)init;

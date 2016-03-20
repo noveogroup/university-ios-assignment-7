@@ -1,14 +1,12 @@
 
-#import "ViewController.h"
+#import "PiCalculationViewController.h"
 
 #import "GameViewController.h"
 
 #import "PiGregorySequenceCalculations.h"
 #import "PIWallesFormulaCalculator.h"
 
-static long double const goodPi = 3.141592653589793238462643383279;
-
-@interface ViewController ()
+@interface PiCalculationViewController ()
 
 @property (nonatomic, strong) NSThread *thread;
 
@@ -26,7 +24,7 @@ static long double const goodPi = 3.141592653589793238462643383279;
 
 @end
 
-@implementation ViewController
+@implementation PiCalculationViewController
 
 - (void)viewDidLoad
 {
@@ -96,14 +94,10 @@ static long double const goodPi = 3.141592653589793238462643383279;
 {
     switch (self.calculatorType.selectedSegmentIndex) {
         case 0:
-            self.piGSCalculator.pi = 0;
-            self.piGSCalculator.n = 0;
             [self.piGSCalculator start];
             break;
             
         case 1:
-            self.piWFCalculator.pi = 2;
-            self.piWFCalculator.n = 1;
             [self.piWFCalculator start];
             break;
             
@@ -123,17 +117,17 @@ static long double const goodPi = 3.141592653589793238462643383279;
 {
     if (self.working) {
         
-        double doublePi;
+        Float64 doublePi;
         NSInteger n;
         
         switch (self.calculatorType.selectedSegmentIndex) {
             case 0:
-                doublePi = (double)self.piGSCalculator.pi;
+                doublePi = self.piGSCalculator.pi;
                 n = self.piGSCalculator.n;
                 break;
                 
             case 1:
-                doublePi = (double)self.piWFCalculator.pi;
+                doublePi = self.piWFCalculator.pi;
                 n = self.piWFCalculator.n;
                 break;
                 
@@ -143,8 +137,8 @@ static long double const goodPi = 3.141592653589793238462643383279;
                 break;
         }
         
-        NSString* currentPiString = [@(doublePi) stringValue];
-        NSString* goodPiString = [@((double)goodPi) stringValue];
+        NSString* currentPiString = [NSString stringWithFormat:@"%0.15f", doublePi];
+        NSString* goodPiString = [NSString stringWithFormat:@"%0.15f", M_PI];
         
         NSMutableAttributedString* string = [[NSMutableAttributedString alloc] initWithString:currentPiString];
         NSInteger length = MIN([currentPiString length], [goodPiString length]) ;

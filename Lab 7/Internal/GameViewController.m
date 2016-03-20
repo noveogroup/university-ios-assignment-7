@@ -1,6 +1,12 @@
 
 #import "GameViewController.h"
 
+struct Velocity {
+    float x;
+    float y;
+};
+typedef struct Velocity Velocity;
+
 static CGFloat batWidth = 50.0f;
 static CGFloat batHeight = 10.0f;
 
@@ -37,7 +43,8 @@ static CGFloat offset = 70.0f;
     [super viewDidLoad];
     [self setupViews];
     
-    //self.navigationController.navigationBar.hidden = YES;
+    self.navigationController.navigationBar.opaque = NO;
+    self.navigationController.navigationBar.translucent = YES;
 }
 
 - (void) viewWillDisappear:(BOOL)animated
@@ -80,7 +87,7 @@ static CGFloat offset = 70.0f;
 - (void) startMoving
 {
     self.calculationThread = [[NSThread alloc] initWithTarget:self selector:@selector(calculate) object:nil];
-    self.ballVelocity = (Velocity){50,300};
+    self.ballVelocity = (Velocity){150,300};
     self.topBatVelocity = (Velocity){0,0};
     self.bottomBatVelocity = (Velocity){0,0};
     self.nextStepTime = 0;
@@ -97,52 +104,35 @@ static CGFloat offset = 70.0f;
             float currentBallX = self.ball.frame.origin.x + ballRadius;
             float currentBallY = self.ball.frame.origin.y + ballRadius;
             
+            BOOL theBallOnTheLeftBorder = (currentBallX - ballRadius) <= 1.0f && (currentBallX - ballRadius) >= -1.0f;
+            BOOL theBallOnTheRightBorder = (self.tableWidth - currentBallX - ballRadius) <= 1.0f && (self.tableWidth - currentBallX - ballRadius) >= -1.0f;
+
+            if ( theBallOnTheLeftBorder || theBallOnTheRightBorder) {
+                
+                self.ballVelocity = (Velocity){-self.ballVelocity.x, self.ballVelocity.y};
+        
+            }
             
-            if ( (currentBallX - ballRadius) <= 1.0f && (currentBallX - ballRadius) >= -1.0f) {
+            BOOL theBallOnTheTopBorder = (currentBallY - batHeight - ballRadius - offset) <= 1.0f && (currentBallY - batHeight - ballRadius - offset) >= -1.0f;
+            BOOL theBallOnTheBottomBorder = (self.tableHeight - currentBallY - batHeight - ballRadius - offset) <=1.0f && (self.tableHeight - currentBallY - batHeight - ballRadius - offset) >= -1.0f;
+            if ( theBallOnTheTopBorder || theBallOnTheBottomBorder) {
                 
-                self.ballVelocity = (Velocity){-self.ballVelocity.x, self.ballVelocity.y};
+                self.ballVelocity = (Velocity){self.ballVelocity.x, -self.ballVelocity.y};
                 
-            } else if ( (self.tableWidth - currentBallX - ballRadius) <= 1.0f && (self.tableWidth - currentBallX - ballRadius) >= -1.0f){
-                
-                self.ballVelocity = (Velocity){-self.ballVelocity.x, self.ballVelocity.y};
             }
             
             
-            if ( (currentBallY - batHeight - ballRadius - offset) <= 1.0f && (currentBallY - batHeight - ballRadius - offset) >= -1.0f) {
-                
-                //friction
-                float friction;
-                if (self.topBatVelocity.x < 0 && self.ballVelocity.x < 0) {
-                    friction = - (self.topBatVelocity.x - self.ballVelocity.x)*0.5;
-                } else {
-                    friction = (self.topBatVelocity.x - self.ballVelocity.x)*0.5;
-                }
-                
-                self.ballVelocity = (Velocity){self.ballVelocity.x + friction, -self.ballVelocity.y};
-                
-            } else if ( (self.tableHeight - currentBallY - batHeight - ballRadius - offset) <=1.0f && (self.tableHeight - currentBallY - batHeight - ballRadius - offset) >= -1.0f){
-                
-                //friction
-                float friction;
-                if (self.topBatVelocity.x < 0 && self.ballVelocity.x < 0) {
-                    friction = - (self.bottomBatVelocity.x - self.ballVelocity.x)*0.5;
-                } else {
-                    friction = (self.bottomBatVelocity.x - self.ballVelocity.x)*0.5;
-                }
-                self.ballVelocity = (Velocity){self.ballVelocity.x + friction, -self.ballVelocity.y};
-    
-            }
-            
-            
-            if (self.ballVelocity.y > 0) {
+            if (self.ballVelocity.y > 0) { //if the ball is moving down
                 //bottom bat will move
                 
                 float timeToMeatingWithBat = (self.tableHeight - currentBallY - ballRadius - batHeight - offset) / self.ballVelocity.y;
                 
                 float timeToMeatingWithWall;
                 if (self.ballVelocity.x > 0) {
+                    //if the ball is moving to the right
                     timeToMeatingWithWall = (self.tableWidth - currentBallX - ballRadius) / self.ballVelocity.x;
                 } else {
+                    //if the ball is moving to the left
                     timeToMeatingWithWall = - (currentBallX - ballRadius) / self.ballVelocity.x;
                 }
                 
@@ -174,15 +164,17 @@ static CGFloat offset = 70.0f;
                 
                 
             }
-            else if (self.ballVelocity.y < 0){
+            else if (self.ballVelocity.y < 0){ //if the ball is moving up
                 //top bat will move
                 
                 float timeToMeatingWithBat = - (currentBallY - ballRadius - batHeight - offset) / self.ballVelocity.y;
                 
                 float timeToMeatingWithWall;
                 if (self.ballVelocity.x > 0) {
+                    //if the ball is moving to the right
                     timeToMeatingWithWall = (self.tableWidth - currentBallX - ballRadius) / self.ballVelocity.x;
                 } else {
+                    //if the ball is moving to the left
                     timeToMeatingWithWall = - (currentBallX -  ballRadius) / self.ballVelocity.x;
                 }
                 
