@@ -6,6 +6,7 @@
 @property (atomic, assign) long double pi;
 
 +(PIWallesFormulaCalculator *) sharedCalculator;
+- (instancetype)init;
 
 - (void) start;
 - (void) pause;

@@ -41,9 +41,14 @@ static long double const goodPi = 3.141592653589793238462643383279;
 
 #pragma mark - Actions
 
-- (IBAction)pauseAction
+- (IBAction)pauseAction:(UIButton *)sender
 {
     self.pause = !self.pause;
+    if (self.pause) {
+        [sender setTitle:@"Resume" forState:UIControlStateNormal];
+    } else {
+        [sender setTitle:@"Pause" forState:UIControlStateNormal];
+    }
     [self.piGSCalculator pause];
     [self.piWFCalculator pause];
 }

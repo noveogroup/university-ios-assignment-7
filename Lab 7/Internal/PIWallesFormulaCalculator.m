@@ -12,7 +12,7 @@ static NSInteger nStep = 2000000;
 @property (atomic, assign) BOOL thirdQueueIsFree;
 @property (atomic, assign) BOOL fourthQueueIsFree;
 
-@property (nonatomic, assign) NSInteger workedThreads;
+@property (nonatomic, strong) NSLock *lock;
 
 @end
 
@@ -28,6 +28,15 @@ static NSInteger nStep = 2000000;
     });
     
     return calculator;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _lock = [NSLock new];;
+    }
+    return self;
 }
 
 #pragma mark - comands
@@ -65,8 +74,11 @@ static NSInteger nStep = 2000000;
     
     void (^calculusBlock)(void) = ^(){
         long double baseN = self.n;
-        self.n += nStep;
         
+        [self.lock lock];
+        self.n += nStep;
+        [self.lock unlock];
+
         long double startPi = 1;
         for (long double n = baseN; n < baseN + nStep; n++) {
             startPi *= 2 * n * 2 * n / ( 2 * n - 1) / ( 2 * n + 1);

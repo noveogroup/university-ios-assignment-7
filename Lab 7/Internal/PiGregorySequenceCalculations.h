@@ -8,6 +8,7 @@
 @property (nonatomic, readonly) BOOL working;
 
 +(PiGregorySequenceCalculations *) sharedCalculator;
+- (instancetype)init;
 
 - (void) start;
 - (void) pause;

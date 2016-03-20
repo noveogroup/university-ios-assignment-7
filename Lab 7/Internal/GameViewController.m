@@ -6,7 +6,7 @@ static CGFloat batHeight = 10.0f;
 
 static CGFloat ballRadius = 10.0f;
 
-static CGFloat offset = 30.0f;
+static CGFloat offset = 70.0f;
 
 @interface GameViewController ()
 
@@ -37,7 +37,7 @@ static CGFloat offset = 30.0f;
     [super viewDidLoad];
     [self setupViews];
     
-    self.navigationController.navigationBar.hidden = YES;
+    //self.navigationController.navigationBar.hidden = YES;
 }
 
 - (void) viewWillDisappear:(BOOL)animated

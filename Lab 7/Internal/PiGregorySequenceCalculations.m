@@ -12,7 +12,7 @@ static NSInteger nStep = 500000;
 @property (atomic, assign) BOOL thirdQueueIsFree;
 @property (atomic, assign) BOOL fourthQueueIsFree;
 
-@property (nonatomic, assign) NSInteger workedThreads;
+@property (atomic, strong) NSLock *lock;
 
 @end
 
@@ -28,6 +28,15 @@ static NSInteger nStep = 500000;
     });
     
     return calculator;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _lock = [NSLock new];;
+    }
+    return self;
 }
 
 #pragma mark - comands
@@ -70,8 +79,10 @@ static NSInteger nStep = 500000;
         for (int n = baseN; n < baseN + nStep; n++) {
             startPi += powl(-1.0, (long double)n) * 4 / ( 2 * n + 1);
         }
+        [self.lock lock];
         self.pi += startPi;
-        
+        [self.lock unlock];
+       
         const char *charsString = dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL);
         NSString *string = [[NSString alloc] initWithCString:charsString encoding:NSASCIIStringEncoding];;
         if ([string isEqualToString:@"first"]) {
@@ -111,6 +122,8 @@ static NSInteger nStep = 500000;
             }
         }
     }
+    
+    
 }
 
 
