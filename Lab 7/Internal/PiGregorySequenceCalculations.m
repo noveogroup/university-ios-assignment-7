@@ -2,7 +2,7 @@
 #import "PiGregorySequenceCalculations.h"
 
 static NSInteger nStep = 500000;
-static NSInteger queuesCount = 4;
+static NSInteger const queuesCount = 4;
 
 @interface PiGregorySequenceCalculations ()
 
@@ -14,13 +14,11 @@ static NSInteger queuesCount = 4;
 @property (atomic, assign) BOOL thirdQueueIsFree;
 @property (atomic, assign) BOOL fourthQueueIsFree;
 
-@property (atomic, strong) NSMutableArray* queuesIsFree;
-@property (atomic) dispatch_queue_t queuesIsFreeQueue;
+@property (atomic, strong) NSLock *lockN;
+@property (atomic, strong) NSLock *lockPi;
 
-@property (atomic, strong) NSLock *lock;
-
-@property (atomic, assign) NSInteger localN;
-@property (atomic, assign) Float64 localPi;
+@property (atomic) NSInteger n;
+@property (atomic) Float64 pi;
 
 @end
 
@@ -42,38 +40,20 @@ static NSInteger queuesCount = 4;
 {
     self = [super init];
     if (self) {
-        _lock = [NSLock new];
-        _queuesIsFreeQueue = dispatch_queue_create("com.mydomain.myapp.queuesIsFreeQueue", NULL);
-        _queuesIsFree = [NSMutableArray arrayWithArray:@[@(YES),@(YES),@(YES),@(YES)]];
+        _lockN = [NSLock new];
+        _lockPi = [NSLock new];
     }
     return self;
-}
-
-- (void)changeState:(BOOL)state forQueueWithIndex:(NSUInteger)index
-{
-    dispatch_async(self.queuesIsFreeQueue, ^{
-        [self.queuesIsFree replaceObjectAtIndex:index withObject:@(state)];
-    });
-}
-
-#pragma mark - geters
-- (NSInteger) n
-{
-    return self.localN;
-}
-
-- (Float64) pi
-{
-    return self.localPi;
 }
 
 #pragma mark - comands
 
 - (void) start
 {
-    self.localPi = 0;
-    self.localN = 0;
+    self.pi = 0;
+    self.n = 0;
     self.working = YES;
+    self.paused = NO;
     
     [self runCalculus];
 }
@@ -92,54 +72,59 @@ static NSInteger queuesCount = 4;
 - (void) runCalculus
 {
     
-    dispatch_queue_t queues[4] = {dispatch_queue_create("1", NULL),
-                                    dispatch_queue_create("2", NULL),
-                                    dispatch_queue_create("3", NULL),
-                                    dispatch_queue_create("4", NULL)};
-    NSArray* queuesNames = @[@"1", @"2", @"3", @"4"];
+    //dispatch_queue_t queues[queuesCount];
+    NSMutableArray *queues = [NSMutableArray array];
+    NSMutableArray *queuesIsFree = [NSMutableArray array];
+    NSMutableArray *queuesNames = [NSMutableArray array];
+    
+    for (int i = 0; i < queuesCount; i++) {
+        NSString *queueName = [@(i) stringValue];
+        
+        [queuesNames addObject:queueName];
+        //queues[i] = dispatch_queue_create(queueName.UTF8String, NULL);
+        [queues addObject:dispatch_queue_create(queueName.UTF8String, NULL)];
+        [queuesIsFree addObject:@(YES)];
+    }
     
     void (^calculusBlock)(void) = ^(){
-        NSInteger baseN = self.localN;
+        NSInteger baseN = self.n;
         
-        [self.lock lock];
-        self.localN += nStep;
-        [self.lock unlock];
+        [self.lockN lock];
+        self.n += nStep;
+        [self.lockN unlock];
 
         Float64 startPi = 0;
         for (double n = baseN; n < baseN + nStep; n++) {
             startPi += (Float64)pow(-1.0, n) * 4 / ( 2 * n + 1);
         }
         
-        [self.lock lock];
-        self.localPi += startPi;
-        [self.lock unlock];
+        [self.lockPi lock];
+        self.pi += startPi;
+        [self.lockPi unlock];
        
         const char *charsString = dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL);
-        NSString *string = [[NSString alloc] initWithCString:charsString encoding:NSASCIIStringEncoding];;
+        NSString *string = [[NSString alloc] initWithCString:charsString encoding:NSUTF8StringEncoding];;
         
-        for (NSUInteger i = 0; i < queuesCount; i++) {
-            if ([string isEqualToString:queuesNames[i]]) {
-                [self changeState:YES forQueueWithIndex:i];
-                break;
-            }
+        NSInteger index = [queuesNames indexOfObject:string];
+        @synchronized (queuesIsFree) {
+            queuesIsFree[index] = @(YES);
         }
     };
     
-    NSInteger oldN = self.localN + 1;
+    NSInteger oldN = self.n + 1;
     while (self.working) {
-        if (!self.paused && (oldN != self.localN)) {
-            
-            for (NSUInteger i = 0; i < queuesCount; i++) {
-                if ([[self.queuesIsFree objectAtIndex:i] boolValue]) {
-                    [self changeState:NO forQueueWithIndex:i];
-                    oldN = self.localN;
-                    dispatch_async(queues[i], calculusBlock);
-                    break;
+        if (!self.paused && (oldN != self.n)) {
+            oldN = self.n;
+
+            @synchronized (queuesIsFree) {
+                NSUInteger freeQueueIndex = [queuesIsFree indexOfObject:@(YES)];
+                if (freeQueueIndex != NSNotFound) {
+                    queuesIsFree[freeQueueIndex] = @(NO);
+                    dispatch_async(queues[freeQueueIndex], calculusBlock);
                 }
             }
         }
     }
-    
     
 }
 

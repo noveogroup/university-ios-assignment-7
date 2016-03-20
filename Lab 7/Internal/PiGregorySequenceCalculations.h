@@ -2,8 +2,8 @@
 
 @interface PiGregorySequenceCalculations : NSObject
 
-@property (nonatomic, assign, readonly) NSInteger n;
-@property (nonatomic, assign, readonly) Float64 pi;
+@property (atomic, readonly) NSInteger n;
+@property (atomic, readonly) Float64 pi;
 
 +(PiGregorySequenceCalculations *) sharedCalculator;
 - (instancetype)init;
