@@ -14,6 +14,9 @@ static NSInteger queuesCount = 4;
 @property (atomic) NSInteger n;
 @property (atomic) Float64 pi;
 
+@property (atomic) BOOL readyToRun;
+
+
 @end
 
 @implementation PIWallesFormulaCalculator
@@ -36,6 +39,7 @@ static NSInteger queuesCount = 4;
     if (self) {
         _lockN = [NSLock new];
         _lockPi = [NSLock new];
+        _readyToRun = YES;
     }
     return self;
 }
@@ -61,6 +65,9 @@ static NSInteger queuesCount = 4;
 {
     self.paused = NO;
     self.working = NO;
+    while (!self.readyToRun) {
+        //wait
+    }
 }
 
 
@@ -71,10 +78,16 @@ static NSInteger queuesCount = 4;
     NSMutableArray *queuesNames = [NSMutableArray array];
     
     for (int i = 0; i < queuesCount; i++) {
-        NSString *queueName = [@(i) stringValue];
+        NSString *queueName = [[NSString alloc] initWithFormat:@"%@", @(i)];
         
         [queuesNames addObject:queueName];
-        [queues addObject:dispatch_queue_create(queueName.UTF8String, NULL)];
+        
+        dispatch_object_t queue = dispatch_queue_create(queueName.UTF8String, NULL);
+        if (queue) {
+            dispatch_set_context(queue, (__bridge void *)(queueName));
+        }
+        
+        [queues addObject:queue];
         [queuesIsFree addObject:@(YES)];
     }
     
@@ -104,6 +117,8 @@ static NSInteger queuesCount = 4;
 
     };
     
+    self.readyToRun = NO;
+    
     NSInteger oldN = self.n + 1;
     while (self.working) {
         if (!self.paused && (oldN != self.n)) {
@@ -117,6 +132,7 @@ static NSInteger queuesCount = 4;
             }
         }
     }
+    self.readyToRun = YES;
 }
 
 @end

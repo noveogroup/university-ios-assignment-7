@@ -75,38 +75,21 @@ static NSInteger const queuesCount = 4;
     }
 }
 
-
-void myFinalizerFunction(void *context)
-{
-    //NSString* theData = (__bridge NSString*)context;
-    
-    NSLog(@"dealloc");
-    
-    // Освобождение структуры.
-    
-    //free((__bridge void *)(theData));
-    
-}
-
 - (void) runCalculus
 {
     
-    NSMutableArray *queuesContext = [NSMutableArray alloc];
-    NSMutableArray *queues = [queuesContext init];
-    
+    NSMutableArray *queues = [NSMutableArray array];
     NSMutableArray *queuesIsFree = [NSMutableArray array];
     NSMutableArray *queuesNames = [NSMutableArray array];
     
     for (int i = 0; i < queuesCount; i++) {
-        NSString *queueNameContext = [NSString alloc];
-        NSString *queueName = [queueNameContext initWithFormat:@"%@", @(i)];
+        NSString *queueName = [[NSString alloc] initWithFormat:@"%@", @(i)];
         
         [queuesNames addObject:queueName];
         
         dispatch_object_t queue = dispatch_queue_create(queueName.UTF8String, NULL);
         if (queue) {
-            dispatch_set_context(queue, (__bridge void *)(queueNameContext));
-            dispatch_set_finalizer_f(queue, &myFinalizerFunction);
+            dispatch_set_context(queue, (__bridge void *)(queueName));
         }
         
         [queues addObject:queue];
