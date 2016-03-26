@@ -1,0 +1,326 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		317782DB1C966E7200427400 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 317782D41C966E7100427400 /* Assets.xcassets */; };
+		317782DC1C966E7200427400 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 317782D51C966E7100427400 /* LaunchScreen.storyboard */; };
+		317782DE1C966E7200427400 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 317782D91C966E7200427400 /* Info.plist */; };
+		31F798251C9B09D300E898CC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F7981B1C9B09D300E898CC /* AppDelegate.m */; };
+		31F798261C9B09D300E898CC /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F7981D1C9B09D300E898CC /* GameViewController.m */; };
+		31F798271C9B09D300E898CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F7981E1C9B09D300E898CC /* main.m */; };
+		31F798281C9B09D300E898CC /* PiGregorySequenceCalculations.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F798201C9B09D300E898CC /* PiGregorySequenceCalculations.m */; };
+		31F798291C9B09D300E898CC /* PIWallesFormulaCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F798221C9B09D300E898CC /* PIWallesFormulaCalculator.m */; };
+		31F7982A1C9B09D300E898CC /* PiCalculationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F798241C9B09D300E898CC /* PiCalculationViewController.m */; };
+		31F7982C1C9B0A7400E898CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31F7982B1C9B0A7400E898CC /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		317782B91C966D6000427400 /* Lab 7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lab 7.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		317782D41C966E7100427400 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		317782D61C966E7200427400 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		317782D91C966E7200427400 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31F7981A1C9B09D300E898CC /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		31F7981B1C9B09D300E898CC /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		31F7981C1C9B09D300E898CC /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		31F7981D1C9B09D300E898CC /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		31F7981E1C9B09D300E898CC /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		31F7981F1C9B09D300E898CC /* PiGregorySequenceCalculations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PiGregorySequenceCalculations.h; sourceTree = "<group>"; };
+		31F798201C9B09D300E898CC /* PiGregorySequenceCalculations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PiGregorySequenceCalculations.m; sourceTree = "<group>"; };
+		31F798211C9B09D300E898CC /* PIWallesFormulaCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIWallesFormulaCalculator.h; sourceTree = "<group>"; };
+		31F798221C9B09D300E898CC /* PIWallesFormulaCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIWallesFormulaCalculator.m; sourceTree = "<group>"; };
+		31F798231C9B09D300E898CC /* PiCalculationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PiCalculationViewController.h; sourceTree = "<group>"; };
+		31F798241C9B09D300E898CC /* PiCalculationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PiCalculationViewController.m; sourceTree = "<group>"; };
+		31F7982B1C9B0A7400E898CC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		317782B61C966D6000427400 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		317782B01C966D6000427400 = {
+			isa = PBXGroup;
+			children = (
+				31F798181C9B09D300E898CC /* Common */,
+				31F798191C9B09D300E898CC /* Internal */,
+				317782D31C966E7100427400 /* Resources */,
+				317782BA1C966D6000427400 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		317782BA1C966D6000427400 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				317782B91C966D6000427400 /* Lab 7.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		317782D31C966E7100427400 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				317782D41C966E7100427400 /* Assets.xcassets */,
+				317782D51C966E7100427400 /* LaunchScreen.storyboard */,
+				317782D91C966E7200427400 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		31F798181C9B09D300E898CC /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		31F798191C9B09D300E898CC /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				31F7982B1C9B0A7400E898CC /* Main.storyboard */,
+				31F7981A1C9B09D300E898CC /* AppDelegate.h */,
+				31F7981B1C9B09D300E898CC /* AppDelegate.m */,
+				31F798231C9B09D300E898CC /* PiCalculationViewController.h */,
+				31F798241C9B09D300E898CC /* PiCalculationViewController.m */,
+				31F7981F1C9B09D300E898CC /* PiGregorySequenceCalculations.h */,
+				31F798201C9B09D300E898CC /* PiGregorySequenceCalculations.m */,
+				31F798211C9B09D300E898CC /* PIWallesFormulaCalculator.h */,
+				31F798221C9B09D300E898CC /* PIWallesFormulaCalculator.m */,
+				31F7981C1C9B09D300E898CC /* GameViewController.h */,
+				31F7981D1C9B09D300E898CC /* GameViewController.m */,
+				31F7981E1C9B09D300E898CC /* main.m */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		317782B81C966D6000427400 /* Lab 7 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 317782D01C966D6000427400 /* Build configuration list for PBXNativeTarget "Lab 7" */;
+			buildPhases = (
+				317782B51C966D6000427400 /* Sources */,
+				317782B61C966D6000427400 /* Frameworks */,
+				317782B71C966D6000427400 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Lab 7";
+			productName = "Lab 7";
+			productReference = 317782B91C966D6000427400 /* Lab 7.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		317782B11C966D6000427400 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Sukhorukov Grigory";
+				TargetAttributes = {
+					317782B81C966D6000427400 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 317782B41C966D6000427400 /* Build configuration list for PBXProject "Lab 7" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 317782B01C966D6000427400;
+			productRefGroup = 317782BA1C966D6000427400 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				317782B81C966D6000427400 /* Lab 7 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		317782B71C966D6000427400 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				317782DE1C966E7200427400 /* Info.plist in Resources */,
+				317782DB1C966E7200427400 /* Assets.xcassets in Resources */,
+				317782DC1C966E7200427400 /* LaunchScreen.storyboard in Resources */,
+				31F7982C1C9B0A7400E898CC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		317782B51C966D6000427400 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31F7982A1C9B09D300E898CC /* PiCalculationViewController.m in Sources */,
+				31F798291C9B09D300E898CC /* PIWallesFormulaCalculator.m in Sources */,
+				31F798261C9B09D300E898CC /* GameViewController.m in Sources */,
+				31F798281C9B09D300E898CC /* PiGregorySequenceCalculations.m in Sources */,
+				31F798271C9B09D300E898CC /* main.m in Sources */,
+				31F798251C9B09D300E898CC /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		317782D51C966E7100427400 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				317782D61C966E7200427400 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		317782CE1C966D6000427400 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		317782CF1C966D6000427400 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		317782D11C966D6000427400 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.self.Lab-7";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		317782D21C966D6000427400 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.self.Lab-7";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		317782B41C966D6000427400 /* Build configuration list for PBXProject "Lab 7" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				317782CE1C966D6000427400 /* Debug */,
+				317782CF1C966D6000427400 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		317782D01C966D6000427400 /* Build configuration list for PBXNativeTarget "Lab 7" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				317782D11C966D6000427400 /* Debug */,
+				317782D21C966D6000427400 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 317782B11C966D6000427400 /* Project object */;
+}
