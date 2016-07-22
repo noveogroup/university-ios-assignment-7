@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2IO-hw-Ohb">
+                                <rect key="frame" x="16" y="35" width="146" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Vrk-HH-O2x"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHj-wB-PwQ">
+                                <rect key="frame" x="264" y="35" width="44" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="WiE-vO-ZV9"/>
+                                </constraints>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stopAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jTl-cG-nfi"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="63k-gV-49N">
+                                <rect key="frame" x="36" y="84" width="248" height="432"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="mpJ-27-3qe"/>
+                                </connections>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00p-Hd-i71">
+                                <rect key="frame" x="195" y="35" width="61" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="61" id="oOs-Fn-2j1"/>
+                                </constraints>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M8f-T0-oWE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FHj-wB-PwQ" firstAttribute="leading" secondItem="00p-Hd-i71" secondAttribute="trailing" constant="8" id="08s-er-Bve"/>
+                            <constraint firstItem="00p-Hd-i71" firstAttribute="baseline" secondItem="FHj-wB-PwQ" secondAttribute="baseline" id="0z1-gO-iWL"/>
+                            <constraint firstItem="FHj-wB-PwQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="4dt-6U-xgf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="63k-gV-49N" secondAttribute="bottom" constant="8" symbolic="YES" id="Bcz-BH-tXv"/>
+                            <constraint firstItem="2IO-hw-Ohb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="R2R-FM-Q0P"/>
+                            <constraint firstItem="00p-Hd-i71" firstAttribute="leading" secondItem="2IO-hw-Ohb" secondAttribute="trailing" constant="33" id="REt-vu-7bj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FHj-wB-PwQ" secondAttribute="trailing" constant="-4" id="RHb-sZ-w2e"/>
+                            <constraint firstItem="63k-gV-49N" firstAttribute="top" secondItem="FHj-wB-PwQ" secondAttribute="bottom" constant="19" id="aSn-dC-JSn"/>
+                            <constraint firstItem="2IO-hw-Ohb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="crX-44-PUx"/>
+                            <constraint firstItem="63k-gV-49N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="ic2-Sf-LaK"/>
+                            <constraint firstItem="63k-gV-49N" firstAttribute="top" secondItem="FHj-wB-PwQ" secondAttribute="bottom" constant="19" id="nao-IC-uJ1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="63k-gV-49N" secondAttribute="trailing" constant="20" id="toZ-bt-6Dg"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="startButton" destination="00p-Hd-i71" id="SkN-ES-A20"/>
+                        <outlet property="stopButton" destination="FHj-wB-PwQ" id="Tk2-0y-3sy"/>
+                        <outlet property="textField" destination="2IO-hw-Ohb" id="iYN-yC-yni"/>
+                        <outlet property="textView" destination="63k-gV-49N" id="oSN-qb-ow9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1619" y="191"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dHR-eH-uK4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RNA-9x-7jI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Vki-Ip-Hy0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OKb-0a-MjA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="275" y="191"/>
+        </scene>
+    </scenes>
+</document>
