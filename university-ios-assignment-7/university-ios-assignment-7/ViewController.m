@@ -17,13 +17,15 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     self.textView.text = @"";
+    self.textField.userInteractionEnabled = NO;
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+
+    NSInteger n = [self.textField.text integerValue];
     
     typeof(self) __weak wself = self;
     
     dispatch_async(queue, ^{
         
-        NSInteger n = [wself.textField.text integerValue];
         for (int i = 1; i <= n; i++) {
             NSInteger result = [TrickyNumberGenerator fibonacci:i];
             
@@ -31,6 +33,10 @@
                 [wself.textView insertText:[NSString stringWithFormat:@"%ld(%d), ", (long)result, i]];
             });
         }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            wself.textField.userInteractionEnabled = YES;
+        });
     
     });
     return YES;
