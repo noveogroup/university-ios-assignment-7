@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C80AE772-F98B-4092-98D5-441AE54E3E27</string>
+	<key>IDESourceControlProjectName</key>
+	<string>NoveoHomework-7</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>498183D9-2319-4E23-960B-DCDBBD6D775E</key>
+		<string>https://github.com/vadimsmirnovnsk/university-ios-assignment-7.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>NoveoHomework-7/NoveoHomework-7.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>498183D9-2319-4E23-960B-DCDBBD6D775E</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/vadimsmirnovnsk/university-ios-assignment-7.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>498183D9-2319-4E23-960B-DCDBBD6D775E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>498183D9-2319-4E23-960B-DCDBBD6D775E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>university-ios-assignment-7</string>
+		</dict>
+	</array>
+</dict>
+</plist>
