@@ -42,8 +42,8 @@
 		210DB1891E0D2AC000953B36 = {
 			isa = PBXGroup;
 			children = (
-				210DB1941E0D2AC000953B36 /* Task_7 */,
 				210DB1931E0D2AC000953B36 /* Products */,
+				210DB1941E0D2AC000953B36 /* Task_7 */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +58,52 @@
 		210DB1941E0D2AC000953B36 /* Task_7 */ = {
 			isa = PBXGroup;
 			children = (
-				210DB1951E0D2AC000953B36 /* AppDelegate.swift */,
-				2188A0261E20E32000499D54 /* GameViewController.swift */,
-				210DB1971E0D2AC000953B36 /* TaskViewController.swift */,
-				210DB1991E0D2AC100953B36 /* Main.storyboard */,
-				210DB19C1E0D2AC100953B36 /* Assets.xcassets */,
-				210DB19E1E0D2AC100953B36 /* LaunchScreen.storyboard */,
-				210DB1A11E0D2AC100953B36 /* Info.plist */,
-				211F819C1E114E24008FA609 /* NumberGenerator.swift */,
+				21D443D21E3714F8004CF110 /* Common */,
+				21D443D51E37151E004CF110 /* Presentation */,
+				21D443D31E371500004CF110 /* Resources */,
 			);
 			path = Task_7;
+			sourceTree = "<group>";
+		};
+		21D443D21E3714F8004CF110 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				211F819C1E114E24008FA609 /* NumberGenerator.swift */,
+			);
+			name = Common;
+			path = Common;
+			sourceTree = "<group>";
+		};
+		21D443D31E371500004CF110 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				210DB19C1E0D2AC100953B36 /* Assets.xcassets */,
+				210DB1A11E0D2AC100953B36 /* Info.plist */,
+			);
+			name = Resources;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		21D443D41E371505004CF110 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2188A0261E20E32000499D54 /* GameViewController.swift */,
+				210DB1971E0D2AC000953B36 /* TaskViewController.swift */,
+			);
+			name = Controllers;
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		21D443D51E37151E004CF110 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				21D443D41E371505004CF110 /* Controllers */,
+				210DB1951E0D2AC000953B36 /* AppDelegate.swift */,
+				210DB19E1E0D2AC100953B36 /* LaunchScreen.storyboard */,
+				210DB1991E0D2AC100953B36 /* Main.storyboard */,
+			);
+			name = Presentation;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,6 +195,7 @@
 				210DB19A1E0D2AC100953B36 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		210DB19E1E0D2AC100953B36 /* LaunchScreen.storyboard */ = {
@@ -167,6 +204,7 @@
 				210DB19F1E0D2AC100953B36 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -270,7 +308,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HVE639V94N;
-				INFOPLIST_FILE = Task_7/Info.plist;
+				INFOPLIST_FILE = Task_7/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.noveogroup.Task-7";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -283,7 +321,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HVE639V94N;
-				INFOPLIST_FILE = Task_7/Info.plist;
+				INFOPLIST_FILE = Task_7/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.noveogroup.Task-7";
 				PRODUCT_NAME = "$(TARGET_NAME)";
